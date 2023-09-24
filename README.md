@@ -1,1 +1,2 @@
 # Automatic_rain_proof_shed_system
+The "Automatic Rainproof Shed System" project is an innovative engineering endeavor designed to provide an automated solution for protecting outdoor spaces and equipment from rain and adverse weather conditions. This project aimed to develop a system that could detect rain and deploy a protective shed or covering over the designated area or equipment, ensuring their safety and functionality in inclement weather.
