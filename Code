@@ -1,0 +1,42 @@
+#include <Servo.h>
+
+// Create a Servo object named 'tap_servo'
+Servo tap_servo;
+
+// Define the pin numbers for the sensor and the tap_servo
+int sensor_pin = 4;
+int tap_servo_pin = 5;
+
+// Variable to store the sensor reading
+int val;
+
+void setup() {
+  // Set the sensor_pin as an input
+  pinMode(sensor_pin, INPUT);
+
+  // Attach the tap_servo to the tap_servo_pin
+  tap_servo.attach(tap_servo_pin);
+
+  // Set pin 8 as an output to control another device (e.g., LED or relay)
+  pinMode(8, OUTPUT);
+}
+
+void loop() {
+  // Read the value from the sensor_pin and store it in 'val'
+  val = digitalRead(sensor_pin);
+
+  // If the sensor value is 0, move the tap_servo to position 0 degrees and set pin 8 to HIGH
+  if (val == 0) {
+    tap_servo.write(0);
+    digitalWrite(8, HIGH);
+  }
+
+  // If the sensor value is 1, move the tap_servo to position 180 degrees and set pin 8 to LOW
+  if (val == 1) {
+    tap_servo.write(180);
+    digitalWrite(8, LOW);
+  }
+}
+
+
+In this code, in addition to controlling the servo motor based on the sensor's value, the code also uses pin 8 to control another device. When the sensor value is 0, the servo moves to position 0 degrees and the pin 8 is set to HIGH, and when the sensor value is 1, the servo moves to position 180 degrees and the pin 8 is set to LOW. You can connect another device to pin 8 (e.g., an LED or a relay) to control it based on the sensor's input.
